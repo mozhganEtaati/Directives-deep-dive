@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Auth } from './auth/auth';
+import { LearningResources } from './learning-resources/learning-resources';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [Auth, LearningResources],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
