@@ -5,7 +5,10 @@
 
   <app-auth />
 
-  @if(isAdmin()){
-    <p>Welcome, Admin User!</p>
-  }
+    <!-- <ng-template appAppauth="admin">
+       <p>Welcome, Admin User!</p>
+    </ng-template> -->
+
+    <p *appAppauth="'admin'" appLog class="protected-content admin">Welcome, Admin User!</p>
+    <p *appAppauth="'user'" appLog class="protected-content unauthenticated">You donot allow!</p>
 </main>

@@ -2,12 +2,14 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { Auth } from './auth/auth';
 import { LearningResources } from './learning-resources/learning-resources';
 import { AuthService } from './auth/auth.service';
+import { Appauth } from './auth/appauth';
+import { Log } from './log';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Auth, LearningResources],
+  imports: [Auth, LearningResources,Appauth,Log],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
