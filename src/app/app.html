@@ -4,4 +4,8 @@
   <hr />
 
   <app-auth />
+
+  @if(isAdmin()){
+    <p>Welcome, Admin User!</p>
+  }
 </main>

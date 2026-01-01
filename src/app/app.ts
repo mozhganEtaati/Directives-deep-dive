@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Auth } from './auth/auth';
 import { LearningResources } from './learning-resources/learning-resources';
+import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -11,5 +12,7 @@ import { LearningResources } from './learning-resources/learning-resources';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Directives-deep-dive');
+ private authService = inject(AuthService);
+
+ isAdmin = computed(() => this.authService.activePermission()==='admin');
 }
